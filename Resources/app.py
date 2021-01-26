@@ -29,28 +29,7 @@ def convertvaluetonumeric(value):
     else:
         return 0
 
-#################################################
-# Database Setup
-#################################################
-# from sqlalchemy.ext.automap import automap_base
-# from sqlalchemy.orm import Session
-# from sqlalchemy import create_engine, func
-# from flask_sqlalchemy import SQLAlchemy
-# app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', '') or "sqlite:///wh20.sqlite"
 
-# # Remove tracking modifications
-# app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-
-# db = create_engine("sqlite:///wh20.sqlite", connect_args={'check_same_thread': False})
-# session = Session(bind=db)
-
-# reflect an existing database into a new model
-# Base = automap_base()
-# # reflect the tables
-# Base.prepare(db, reflect=True)
-
-# # Save reference to the table
-# Country = Base.classes.wh20
 
 # create route that renders index.html template
 @app.route("/")
