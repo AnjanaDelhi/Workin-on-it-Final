@@ -2,6 +2,8 @@
 #from models import create_classes
 import os
 import math
+import random
+import pandas as pd
 from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import StandardScaler
 from sklearn.preprocessing import LabelEncoder
@@ -25,6 +27,17 @@ loaded_model = joblib.load("decision_tree.sav")
 
 #load scaler
 scaler = joblib.load("Scaler.sav")
+
+#textgenerator
+with open("generator/movie_titles.txt", "r") as file:
+    allText = file.read() 
+    words = list(map(str, allText.split())) 
+
+actors = pd.read_csv('generator/actor_names.txt', header=None, names=['actor'])
+genre = ['Action','Adventure','Animation','Biography','Comedy','Crime','Drama','Family','Fantasy','Horror','Mystery','Romance','Sci-Fi','Thriller']
+language = ['English','French','Japanese','Korean','Mandarin','Spanish']
+
+
 
 def convertvaluetonumeric(value):
     if value:
@@ -99,7 +112,11 @@ def send():
 
         return render_template("index_tree.html", data=value_description)
 
-    
+@app.route("/get_quote")
+def randomize():
+    random1 = [actors.sample(n=1).values[0,0] + ' will be the lead actor in a(n) ' + random.choice(language) + ' ' + random.choice(genre) 
+ + ' ' + 'titled ' + random.choice(words) + ' ' + random.choice(words)  + '.']
+    return jsonify(random1)
 
 
 if __name__ == "__main__":

@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Final Project</title>
-    <link rel="stylesheet" href="../style.css">  
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.css">
     <link rel="stylesheet" href="https://bootswatch.com/_assets/css/custom.min.css">
+    <script src="https://d3js.org/d3.v5.min.js"></script>
     <script type="text/javascript" async="" src="https://ssl.google-analytics.com/ga.js"></script>
     <!--<script id="_carbonads_projs" type="text/javascript" src="https://srv.carbonads.net/ads/CKYIE23N.json?segment=placement:bootswatchcom&amp;callback=_carbonads_go"></script> -->
 <style>
@@ -24,7 +25,7 @@
 <!--Navbar-->
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-            <a class="navbar-brand" href="index.html">Working On A Movie?</a>
+            <a class="navbar-brand" href="/">Working On A Movie?</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
@@ -32,33 +33,41 @@
             <div class="collapse navbar-collapse" id="navbarColor03">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                <a class="nav-link" href="index.html">Make A Movie!</a>
+                <a class="nav-link" href="/">Make A Movie!</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="genre.html">Genres</a>
+                <a class="nav-link" href="/genre">Randomize A Movie!</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="top10.html">Top 10</a>
+                <a class="nav-link" href="/top10">Movie and Actors Successes!</a>
                 </li>
             </ul>
             </div>
         </nav>
         <!--Header Image-->
-        <img src="../images/redcarpet.jpg" alt="Movie Premeire" class="center" height="350px">
+        <img src="{{ url_for('static', filename='images/redcarpet.jpg') }}" alt="Movie Premeire" class="center" height="350px">
         <!--Title-->
-        <h1 class="title">Movie Genres!</h1>
+        <h1 class="title">Randomize A  Movie!</h1>
         
     </header>
    
-    
+    <div class="randomize">
+        <button type="button" onclick="randomize()">Randomize!</button>
+        <div id="quote">
+        
+        </div>
+       
+    </div>
 
     <!--Scripts-->
+    
     <script src="https://bootswatch.com/_vendor/jquery/dist/jquery.min.js"></script>
    <!-- <script src="https://bootswatch.com/_vendor/popper.js/dist/umd/popper.min.js"></script> -->
     <script src="https://bootswatch.com/_vendor/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="https://bootswatch.com/_assets/js/custom.js"></script>
 <!-- jQuery CDN -->    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <!-- Bootstrap CDN -->    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../static/js/randomize.js"></script>
 </body>
 
 </html>
