@@ -4,9 +4,6 @@ import os
 import math
 from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import StandardScaler
-from sklearn.preprocessing import LabelEncoder
-from sklearn import tree
-from sklearn.ensemble import RandomForestClassifier
 import joblib
 from flask import (
     Flask,
@@ -21,7 +18,7 @@ from flask import (
 app = Flask(__name__)
 
 #load model
-loaded_model = joblib.load("decision_tree.sav")
+loaded_model = joblib.load("workin_model_liner.sav")
 
 #load scaler
 scaler = joblib.load("Scaler.sav")
@@ -33,10 +30,11 @@ def convertvaluetonumeric(value):
         return 0
 
 
+
 # create route that renders index.html template
 @app.route("/")
 def home():
-    return render_template("index_tree.html")
+    return render_template("index.html")
 
 @app.route("/genre")
 def happy():
@@ -71,27 +69,23 @@ def send():
         lang_Korean = convertvaluetonumeric(request.form.getlist("korean"))
         lang_Mandarin = convertvaluetonumeric(request.form.getlist("mandarin"))
         lang_Spanish = convertvaluetonumeric(request.form.getlist("spanish"))
-        budget_classes_budget_high = convertvaluetonumeric(request.form.getlist("high"))
-        budget_classes_budget_low = convertvaluetonumeric(request.form.getlist("low"))
-        budget_classes_budget_med = convertvaluetonumeric(request.form.getlist("med"))
+        log_budget = math.log(int(request.form.getlist("budget")[0]))
         
 
         inputvalue = [[Action, Adventure, Animation, Biography, Comedy, Crime, Drama, Family, Fantasy, Horror, Mystery, Romance,
  SciFi,
  Thriller,
+ log_budget,
  lang_English,
  lang_French,
  lang_Japanese,
  lang_Korean,
  lang_Mandarin,
- lang_Spanish, 
- budget_classes_budget_high,
- budget_classes_budget_low,
- budget_classes_budget_med]]
+ lang_Spanish]]
 
-        print(loaded_model.predict(inputvalue))
+        print(loaded_model.predict(scaler.transform(inputvalue)))
 
-        return render_template("index_tree.html", data=loaded_model.predict(inputvalue))
+        return render_template("index.html", data=10**loaded_model.predict(scaler.transform(inputvalue)))
 
     
 
