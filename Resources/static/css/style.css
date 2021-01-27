@@ -21,3 +21,7 @@ body {
   column-count: 2;
 }  
 
+table {
+  margin-left: auto;
+  margin-right: auto;
+}

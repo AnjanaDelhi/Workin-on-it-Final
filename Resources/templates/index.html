@@ -56,67 +56,89 @@
     Select movie attributes in the form below and the computer will generate a new movie for you!
     </p>
     <!--Form-->
+    <table style="width: 100%">
     <form method="POST">
         <!--Genre-->
-        <p>Select Genre: <br> (up to 3)</p>
-        <div class="genre">
-        <input type="checkbox" id="action" name="action">
-        <label for="action">Action</label><br>
-        <input type="checkbox" id="adventure" name="adventure">
-        <label for="adventure">Adventure</label><br>
-        <input type="checkbox" id="animation" name="animation">
-        <label for="animation">Animation</label><br>
-        <input type="checkbox" id="biography" name="biography">
-        <label for="biography">Biography</label><br>
-        <input type="checkbox" id="comedy" name="comedy">
-        <label for="comedy">Comedy</label><br>
-        <input type="checkbox" id="crime" name="crime">
-        <label for="crime">Crime</label><br>
-        <input type="checkbox" id="drama" name="drama">
-        <label for="drama">Drama</label><br>
-        <input type="checkbox" id="family" name="family">
-        <label for="family">Family</label><br>
-        <input type="checkbox" id="fantasy" name="fantasy">
-        <label for="fantasy">Fantasy</label><br>
-        <input type="checkbox" id="horror" name="horror">
-        <label for="horror">Horror</label><br>
-        <input type="checkbox" id="mystery" name="mystery">
-        <label for="mystery">Mystery</label><br>
-        <input type="checkbox" id="romance" name="romance">
-        <label for="romance">Romance</label><br>
-        <input type="checkbox" id="scifi" name="scifi">
-        <label for="scifi">Sci-Fi</label><br>
-        <input type="checkbox" id="thriller" name="thriller">
-        <label for="thriller">Thriller</label><br>
-        </div>
+        <tr>
+            <th>Select Genre: <br> (up to 3)</th>
+            <th>Select Language:<br></th>
+            <th>Select Budget:</th>
+        </tr>
+        <tr>
+            <td>
+            <div class="genre">
+            <input type="checkbox" id="action" name="action">
+            <label for="action">Action</label><br>
+            <input type="checkbox" id="adventure" name="adventure">
+            <label for="adventure">Adventure</label><br>
+            <input type="checkbox" id="animation" name="animation">
+            <label for="animation">Animation</label><br>
+            <input type="checkbox" id="biography" name="biography">
+            <label for="biography">Biography</label><br>
+            <input type="checkbox" id="comedy" name="comedy">
+            <label for="comedy">Comedy</label><br>
+            <input type="checkbox" id="crime" name="crime">
+            <label for="crime">Crime</label><br>
+            <input type="checkbox" id="drama" name="drama">
+            <label for="drama">Drama</label><br>
+            <input type="checkbox" id="family" name="family">
+            <label for="family">Family</label><br>
+            <input type="checkbox" id="fantasy" name="fantasy">
+            <label for="fantasy">Fantasy</label><br>
+            <input type="checkbox" id="horror" name="horror">
+            <label for="horror">Horror</label><br>
+            <input type="checkbox" id="mystery" name="mystery">
+            <label for="mystery">Mystery</label><br>
+            <input type="checkbox" id="romance" name="romance">
+            <label for="romance">Romance</label><br>
+            <input type="checkbox" id="scifi" name="scifi">
+            <label for="scifi">Sci-Fi</label><br>
+            <input type="checkbox" id="thriller" name="thriller">
+            <label for="thriller">Thriller</label><br>
+            </div>
+            </td>
+        
         <!--Language-->
-        <div class="language">
-        <p>Select Language:<br></p>
-        <input type="checkbox" id="english" name="english">
-        <label for="english">English</label><br>
-        <input type="checkbox" id="french" name="french">
-        <label for="french">French</label><br>
-        <input type="checkbox" id="japanese" name="japanese">
-        <label for="japanese">Japanese</label><br>
-        <input type="checkbox" id="korean" name="korean">
-        <label for="korean">Korean</label><br>
-        <input type="checkbox" id="mandarin" name="mandarin">
-        <label for="mandarin">Mandarin</label><br>
-        <input type="checkbox" id="spanish" name="spanish">
-        <label for="spanish">Spanish</label><br>
-        </div>
+        
+            <td>
+            <input type="checkbox" id="english" name="english">
+            <label for="english">English</label><br>
+            <input type="checkbox" id="french" name="french">
+            <label for="french">French</label><br>
+            <input type="checkbox" id="japanese" name="japanese">
+            <label for="japanese">Japanese</label><br>
+            <input type="checkbox" id="korean" name="korean">
+            <label for="korean">Korean</label><br>
+            <input type="checkbox" id="mandarin" name="mandarin">
+            <label for="mandarin">Mandarin</label><br>
+            <input type="checkbox" id="spanish" name="spanish">
+            <label for="spanish">Spanish</label><br>
+            </div>
+            </td>
+
         <!--Budget-->
-        <label for="budget">Budget:</label><br>
-        <input type="text" id="budget" name="budget"><br>
-        <!--Submit Button-->
-        <input type="submit" value="Submit">
-      </form> 
+            <td>
+            <label for="budget"></label><br>
+            <input type="text" id="budget" name="budget"><br>
+            </td>
+        </tr>
+        <tr>
+            <th>
+             <!--Submit Button-->
+            <input type="submit" value="Submit">
+            </th>
+        </tr>
+        
+    </form> 
+    </table>
     
     <p>
        {%if data  %} 
        The predicted US gross income is: {{data}}
        {% endif %}
     </p>
+
+    
 
     <!--Scripts-->
     <script src="https://bootswatch.com/_vendor/jquery/dist/jquery.min.js"></script>
