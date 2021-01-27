@@ -1,1 +1,1 @@
-web: gunicorn --chdir Resources app:app_tree
+web: gunicorn --chdir Resources app:app
