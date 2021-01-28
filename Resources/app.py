@@ -25,6 +25,7 @@ app = Flask(__name__)
 
 #load model
 filename = "decision_tree.sav"
+#filename = "workin_model_liner.sav"
 loaded_model = pickle.load(open(filename, 'rb'))
 
 #load scaler
@@ -114,6 +115,10 @@ def send():
             value_description =  "High Income (Above $60,000,000)"
 
         return render_template("index_tree.html", data=value_description)
+
+        #print(loaded_model.predict(scaler.transform(inputvalue)))
+
+        #return render_template("index_tree.html", data=10**loaded_model.predict(scaler.transform(inputvalue)))
 
 @app.route("/get_quote")
 def randomize():
