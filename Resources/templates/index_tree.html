@@ -20,6 +20,10 @@
     img {
         position: center;
     }
+    .submit{
+        margin-left: auto;
+        margin-right: auto;
+    }
 </style>
 </head>
 <body>
@@ -56,6 +60,7 @@
     Select movie attributes in the form below and the computer will predict how profitable the new movie is for you!
     </p>
     <!--Form-->
+    <div class="submit">
     <table style="width: 100%">
     <form method="POST">
         <!--Genre-->
@@ -129,6 +134,7 @@
                 </div>
             </td>
         </tr>
+        
         <tr>
             <td>
                 <!--Submit Button-->
@@ -137,6 +143,7 @@
         </tr>
     </form> 
     </table>
+    </div>
     
     <p>
        {%if data  %} 
