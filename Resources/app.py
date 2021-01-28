@@ -24,10 +24,12 @@ from flask import (
 app = Flask(__name__)
 
 #load model
-loaded_model = joblib.load("decision_tree.sav")
+filename = "decision_tree.sav"
+loaded_model = pickle.load(open(filename, 'rb'))
 
 #load scaler
-scaler = joblib.load("Scaler.sav")
+filename = "Scaler.sav"
+scaler = pickle.load(open(filename, 'rb'))
 
 #textgenerator
 with open("generator/movie_titles.txt", "r") as file:
