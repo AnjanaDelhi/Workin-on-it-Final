@@ -9,7 +9,8 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.preprocessing import LabelEncoder
 from sklearn import tree
 from sklearn.ensemble import RandomForestClassifier
-import joblib
+#import joblib
+import pickle
 from flask import (
     Flask,
     render_template,

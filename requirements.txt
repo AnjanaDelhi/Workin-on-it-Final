@@ -60,7 +60,7 @@ Flask==1.1.2
 # jupyter==1.0.0
 # jupyter-core==4.6.3
 # jupyterlab==2.2.6
-joblib==0.16.0
+# joblib==0.16.0
 # lazy-object-proxy==1.4.3
 # libarchive-c==2.9
 # llvmlite==0.34.0
@@ -90,7 +90,7 @@ pandas==1.0.3
 # patsy==0.5.1
 # pep8==1.7.1
 # pexpect==4.8.0
-# pickleshare==0.7.5
+pickleshare==0.7.5
 # pkginfo==1.6.1
 # pluggy==0.13.1
 # ply==3.11
